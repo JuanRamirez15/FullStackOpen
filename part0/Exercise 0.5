@@ -1,0 +1,19 @@
+title Exercise 0.5
+browser->server:HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser:HTML code
+server-->browser:main.css
+server-->browser:spa.js
+server-->browser:data.json
+note over browser:
+the content is manipulated 
+with JavaScript that runs 
+in the browser
+end note
+note over browser:
+browser starts executing js-code
+end note
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
