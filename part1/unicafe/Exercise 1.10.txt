@@ -1,0 +1,60 @@
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+
+const Button = (props) => {
+  console.log(props)
+  return (
+      <button onClick={() => props.set(props.comentario+1)}>{props.text}</button>
+  )
+
+}
+const Statistics = (props) => {
+  
+  if (props.text == "all"){
+    return (
+      <p>{props.text} {props.comentarios.reduce((a,b) => a+b,0)}</p>
+    )
+  }
+  if (props.text == "average"){
+    return (
+      <p>{props.text} {(props.comentarios[0]-props.comentarios[2])/(props.comentarios.reduce((a,b) => a+b,0))} %</p>
+    )
+  }
+  if (props.text == "positive"){
+    return (
+      <p>{props.text} {props.comentarios[0]*100/(props.comentarios.reduce((a,b) => a+b,0))}</p>
+    )
+  }
+  if ((props.comentarios[0] == 0) && (props.comentarios[1] == 0) && (props.comentarios[2] == 0)){
+    return (<p>No feedback given</p>)
+  }
+  return (
+    <div>
+      <p>{props.text} {props.comentario}</p>
+    </div>
+  )
+
+}
+const App = () => {
+  // save clicks of each button to its own state
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+  return (
+    <div>
+      <h1>give feedback</h1>
+      <Button text="good" comentario={good} set={setGood}/><Button text="neutral" comentario={neutral} set={setNeutral}/><Button text = "bad" comentario={bad} set={setBad}></Button>
+      <h1>statistics</h1>
+      <Statistics text="good" comentario={good} comentarios={[good,neutral,bad]} />
+      <Statistics text="neutral" comentario={neutral} comentarios={[good,neutral,bad]}/>
+      <Statistics text="bad" comentario={bad} comentarios={[good,neutral,bad]}/>
+      <Statistics text="all" comentarios={[good,neutral,bad]}/>
+      <Statistics text="average" comentarios={[good,neutral,bad]}/>
+      <Statistics text="positive" comentarios={[good,neutral,bad]}/>
+    </div>
+    
+  )
+}
+ReactDOM.render(<App />, 
+  document.getElementById('root')
+)
