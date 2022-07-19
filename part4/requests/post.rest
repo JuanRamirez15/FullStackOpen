@@ -1,0 +1,32 @@
+POST http://localhost:3003/api/login
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImplcnIxOTk4IiwiaWQiOiI2MmQ1Yjc5ODFkMzA3NTcwYjQ1ZWU1ZGMiLCJpYXQiOjE2NTgxNzU3Njl9.VGRo_SQcZhL0NgD0ioAfGdoUZFUX2Zi_5QvWzKjwWAQ
+
+{
+    "username": "jerr1998",
+    "password": "asd"
+
+}
+
+###
+POST http://localhost:3003/api/blogs
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImplcnIxOTk4IiwiaWQiOiI2MmQ1Yjc5ODFkMzA3NTcwYjQ1ZWU1ZGMiLCJpYXQiOjE2NTgxNzU3Njl9.VGRo_SQcZhL0NgD0ioAfGdoUZFUX2Zi_5QvWzKjwWAQ
+
+{
+    "title": "Blog 70",
+    "author": "Carlos",
+    "url": "url aca",
+    "likes": 20
+}
+
+###
+POST http://localhost:3003/api/users
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImplcnIxOTk4IiwiaWQiOiI2MmQ1Yjc5ODFkMzA3NTcwYjQ1ZWU1ZGMiLCJpYXQiOjE2NTgxNzU3Njl9.VGRo_SQcZhL0NgD0ioAfGdoUZFUX2Zi_5QvWzKjwWAQ
+
+{
+    "username": "juancho15",
+    "name": "Juan Esteban",
+    "passwordHash": "123"
+}
